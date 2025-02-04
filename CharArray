@@ -1,0 +1,209 @@
+#include <iostream>
+#include <string>
+using namespace std;
+void reverseString(char str[], int size)
+{
+    int start = 0;
+    int end = size - 1;
+    while (start <= end)
+    {
+        swap(str[start], str[end]);
+        start++;
+        end--;
+    }
+    cout << str << endl;
+}
+void convertIntoLowerCase(char ch[], int size)
+{
+    int index = 0;
+    while (ch[index] != '\0')
+    {
+        if (ch[index] >= 'A' && ch[index] <= 'Z')
+        {
+            ch[index] = ch[index] - 'A' + 'a';
+        }
+        index++;
+    }
+}
+void convertIntoUpperCase(char ch[], int size)
+{
+    int index = 0;
+    while (ch[index] != '\0')
+    {
+        if (ch[index] >= 'a' && ch[index] <= 'z')
+        {
+            ch[index] = ch[index] - 'a' + 'A';
+        }
+        index++;
+    }
+}
+bool checkChatrecter(char ch[], char chh)
+{
+    for (int i = 0; i < ch.)
+}
+int main()
+{
+    //    How do you declare and initialize a character array with the string "Hello" in C++?
+    //  char arr[]="hello";
+    //  cout<<arr<<endl;
+
+    // Character Array vs String
+    // char arr[]="hello";
+    // string str="Hello";
+    // cout<<arr<<endl;
+    // cout<<str<<endl;
+
+    // char arr[] is a fixed-size array and needs functions like strcpy() for modifications.
+    // std::string is a dynamic string class with built-in operators.
+
+    // char arr[]="hello";
+    // cout<<"Size of arr: "<< sizeof(arr)<<endl;
+
+    // 4️⃣ Null-Termination Issue
+    // char arr[5]={'h','e','l','l','o'};
+    // cout<<arr<<endl;
+    //  warning: missing terminating ' character [-Winvalid-pp-token]
+
+    // char arr[6]={'h','e','l','l','o','\0'};
+    // cout<<arr<<endl;
+
+    // Taking User Input (cin vs getline)
+    // char name1[20],name2[20];
+    // cin >>name1;
+    // cout<<name1;
+    // cin.getline(name2,20);
+    // cout<<name2;
+
+    // 6️⃣ String Length Without sizeof()
+    // char arr[]="hello";
+    // cout<<"Length of arr: "<< strlen(arr)<<endl;
+
+    // 7️⃣ Copying a Char Array Correctly
+    // char str1[]="Hello";
+    // char str2[10];
+    // strcpy(str2,str1);
+    // cout<<"Copied string: "<<str2<<endl;
+
+    // ❌ Wrong: str2 = str1;
+    // ✅ Correct: Use strcpy() from <cstring>.
+
+    // 8️⃣ Concatenation of Char Arrays
+    // char str1[20]="Hello";
+    // char str2[]=" World";
+    // strcat(str1,str2);
+    // cout<<"Contactination string : "<<str1<<endl;
+
+    // 9️⃣ Reverse a Char Array
+
+    // char ch[]="Hello";
+    // int size= strlen(ch);
+    // reverseString(ch,size);
+
+    // 🔟 Finding a Character in a Char Array
+
+    // char str[]="Hello, World";
+    // char *ptr=strchr(str,'o');
+    // if(ptr){
+    //     cout<<"First occurance of 'o: "<<ptr<<endl;
+    // }
+    // else{
+    //     cout<<"Not found"<<endl;
+    // }
+
+    // 2
+    // Q: How do you declare a char array in C++?
+
+    // char arr[5]={'H','e','l','l','o'};
+    // cout<<arr<<endl;
+    // // 2️⃣ Initialize a Char Array
+    // char arr[]="Hello";
+    // cout<<arr<<endl;
+
+    // 3️⃣ Print Each Character of a Char Array
+    // char ch[]="Hello";
+    // // for(int i=0;ch[i]!='\0';i++){
+    // //     cout<<ch[i]<<" ";
+
+    // // }
+    // for(int i=0;i<strlen(ch);i++){
+    //     cout<<ch[i]<<" ";
+    // }
+
+    // 4️⃣ Find the Length of a Char Array
+    // char ch[]="Hello";
+    // int index =0;
+    // while(ch[index]!='\0'){
+    //     index++;
+    // }
+    // cout<<index;
+
+    // 5️⃣ Input a Char Array
+    // Q: How do you take a char array as input?
+
+    // char name[20];
+    // cout<<"Enter the name :";
+    // cin >>name;
+    // cout<<"Hello, "<<name <<"!"<<endl;
+
+    // 6️⃣ Input a Full String (with spaces)
+    // char ch[20];
+    // cout<<"Enter the full name :";
+    // cin.getline(ch,30);
+    // cout<<"You entered :"<<ch<<endl;
+
+    // 7️⃣ Convert Uppercase to Lowercase
+    // char ch[100]="my name is ayush atindra";
+    // int size= strlen(ch);
+    // convertIntoUpperCase(ch,size);
+    // cout<<ch<<endl;
+    // 8️⃣ Check If a Character Exists in a Char Array
+
+    // char ch[5];
+    // char arr[4]={'A','B','C','D'};
+    // char arr[]="Hello";
+    // char arr[]="Hi";
+    // cout<<arr<<endl;
+    // char arr[]="Hello";
+    // cout<<arr[0]<<" ";
+
+    // char name[20];
+    // cout<<"Enter the word: ";
+    // cin >>name;
+    // cout<<"You entered :"<<name<<endl;
+
+    // char sentance[50];
+    // cout<<"Enter the sentence ";
+    // cin.getline(sentance,50);
+    // cout<<sentance<<endl;
+
+    // char arr[]="Hello";
+    // arr[0]='M';
+    // cout<<arr<<endl;
+
+    // char arr[]="Hello";
+    // cout<<arr[4]<<endl;
+
+    // char arr[]="";
+    // if(arr[0]=='\0'){
+    //     cout<<"Array is empty!"<<endl;
+    // }
+    // else{
+    //     cout<<"Array is not empty"<<endl;
+    // }
+    char arr[5];
+    char arr[5] = {'A', 'B', 'C', 'D', 'E'};
+    char arr[] = "hello";
+    cout << arr;
+    cout << arr[0];
+    char name[20];
+    cout << "Enter a word";
+    cin >> name;
+    cout << "You entered " << name << endl;
+    char sentance[50];
+    cout << "ENter a sentence ";
+    cin.getline(sentence, 50);
+    cout << "You have entered " << sentence;
+    char arr[] = "hello";
+    arr[0] = 'M';
+    cout << arr << endl;
+}
