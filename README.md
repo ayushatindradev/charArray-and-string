@@ -1,9 +1,3 @@
-Here's a **GitHub repository description** for your solved **char array and string problems in C++**:  
-
----
-
-### **GitHub Repository Description**  
-
 # 🚀 C++ Char Arrays & Strings -  Problems  
 
 This repository contains **super easy** C++ problems and solutions related to **char arrays** and **strings**. If you're a beginner looking to strengthen your fundamentals in handling characters and strings in C++, this is the perfect place!  
