@@ -22,7 +22,3 @@ Each problem is implemented in **C++** with a clear and simple solution. The cod
 
 ## 🤝 Contribute  
 Feel free to fork the repository, add more problems, or improve existing solutions! Let's grow together 🚀  
-
----
-
-This description will make your **GitHub repo** look professional and useful for learners. Let me know if you need any modifications! 💻🔥
