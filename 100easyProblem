@@ -1,0 +1,377 @@
+#include <iostream>
+using namespace std;
+bool isAlphabetOnly(string str)
+{
+    for (char ch : str)
+    {
+        if (!isalpha(ch))
+        {
+            return false;
+        }
+        return true;
+    }
+}
+int main()
+{
+    //     What is a char array in C++?
+    // A char array is a collection of chatactrer stored in contiguous memory location. It is used to store a sequence of chatrcter like a string.
+    // How do you declare a char array to store a string in C++?
+    // char str[100];
+    // What is the difference between a char array and a string in C++?
+    // A char array is a basics array of charecter , while a c++ string is an object of the std::string class that automatically handles memory and provides build in methids for string maipulation/
+    // How do you initialize a char array with a string literal?
+    // int length =0;
+    // while(str[length]!='\0'){
+    //     length++;
+    // }
+    // How can you find the length of a char array (without using strlen)?
+    // char src[]="Hello";
+    // char dest[100];
+    // for(int i=0;src[i]!='\0';i++){
+    //     dest[i]=src[i];
+    // }
+    //  cout<<dest<<endl;
+    // dest[i]='\0';
+    // How do you copy one char array to another in C++?
+    char str1[] = "Hello";
+    char str2[] = " World";
+    char world[20];
+    int i = 0;
+    while (str1 != '\0' && str2 != '\0')
+    {
+        world[i] = str1[i];
+        i++;
+        world[i] = str2[i];
+        i++;
+    }
+
+    // How do you concatenate two char arrays into one?
+    // char str1[]="Hello";
+    // char str2[]=" World";
+    // char result[20];
+    // int i=0, j=0;
+
+    // while (str1[i]=='\0'){
+    //     result[j++]=str1[i++];
+
+    // }
+    // while (str2[j]=='\0'){
+    //     result[j++]=str2[i++];
+
+    // }
+    // result[j]='\0';
+    // What is the output when you print a char array that represents a string in C++?
+    // char str[]="Hello";
+    // std::cout<<str;
+    // How do you convert a char array into a C++ string object?
+    // char str[]="Hello";
+    // string s(str);
+    // How can you compare two char arrays (strings) in C++?
+    // char str1[]="Hello";
+    // char str2[]="Hello";
+    // if(strcpy(str1,str2)==0){
+    //     cout<<"Both strings are equal"<<endl;
+    // }
+    // else{
+    //     cout<<"Both strings are not equal"<<endl;
+    // }
+    // Basic Questions
+    // What is a character array in C++?
+    // char arr[]="Hello";
+    // How do you declare a character array of size 20?
+    // char arr[20];
+    // How do you initialize a character array with a string literal?
+    // char arr[]="Hello";
+    // What is a null terminator (\0) in a character array?
+    // char arr[]={'H', 'I', 'O','\0'};
+    // How do you determine the size of a character array?
+    // int size = sizeof(arr)/sizeof(arr[0]);
+    // What is the difference between char str[] = "Hello"; and char *str = "Hello";?
+    // char str1[]="Hello"; //stored in stack
+    // char *str2="hello"; //stored in read only memory
+
+    // How do you take input for a character array using cin?
+    // char str[20];
+    // cin >>str;
+    // How do you print a character array using cout?
+    // cout<<str;
+    // What happens if you forget to add the null terminator (\0) in a char array?
+    // undefined behaviour as wont't know ehere the string end .
+    // How can you manually insert a null terminator in a character array?
+    // char arr[6]="Hello";
+    // arr[5]='\0';
+
+    // String Handling Functions (cstring library)
+    // What does strlen() do in C++?
+    // cout<<strlen("hello") //5
+    // How do you copy one character array to another using strcpy()?
+    // char src[]="Hello";
+    // char dest[10];
+    // strcpy(dest,src)
+    // How do you concatenate two character arrays using strcat()?
+    // char str1[20]="hello";
+    // char sest[10];
+    // strcpy(dest,src);
+    // How do you compare two character arrays using strcmp()?
+    // if(strcmp("abc","abc")==0)cout<<"Equal" )
+    // What is the difference between strcmp() and strncmp()?
+    // strcmp() compare only the first n charecter
+    // What does strncpy() do?
+    // strncpy(dest,src,3);
+    // dest[3]='\0';
+    // What happens if the source string is longer than the destination in strcpy()?
+
+    // What does strchr() do in C++?
+    // How can you find the first occurrence of a character in a string using strchr()?
+    // What does strstr() do?
+    // Working with C++ Strings (std::string)
+    // What is the difference between a char array and std::string in C++?
+    // std::string is more flexible , safer and has build in function
+    // How do you declare a string in C++ using std::string?
+    // string str("hello")
+    // How do you initialize a std::string with a value?
+    // string str("hello");
+    // How do you get the length of a std::string?
+    // cout<<str.length()<<" characters
+    // How do you compare two std::string values?
+    // if(str1== str2) cout<<"Equal";
+    // How do you concatenate two std::string values?
+    // string result = str1+ str2;
+    // How do you find a substring in a std::string?
+    // cout<<str.find("lo");
+    // How do you extract a portion of a std::string using substr()?
+    // cout<<str.substr(1,3);
+    // How do you convert a std::string to a char array?
+    // char arr[10];
+    // strcpy(arr,str.c_str());
+    // How do you convert a char array to a std::string?
+    // string str(arr);
+    // Taking Input for Character Arrays and Strings
+    // What is the difference
+    // between cin and getline() for strings?
+    // cin >> str ;
+    // getline(cin , str)
+    // Why does cin stop taking input after a space in a character array?
+    // cin reads untiil whitespaces
+    // How do you take input for a sentence using getline()?
+    // getline(cin,str)
+    // How do you take input for a character array using cin.getline()?
+    // cin.getline(arr,20);
+    // What happens when the input is longer than the character array size?
+    // buffer overflow
+    // How do you clear the input buffer before using getline()?
+    // buffer overflow
+    // How do you replace a character in a string using a loop?
+    // for(char &ch: str){
+    //     if(ch=='a'){
+    //         ch = 'x';
+    //     }
+    // }
+    // // How do you reverse a character array manually?
+    // int i=0,j = strlen(str)-1;
+    // while(i<j){
+    //     swap(str[i++],str[j--]);
+    // }
+    // How do you check if a character array is a palindrome?
+    // bool isPalendrome= true;
+
+    // int i=0,j= strlen(str)-1;
+    // while(i<j){
+    //     if(str[i]!= str[j]){
+    //         isPalendrome=false;
+    //         return;
+    //     }
+
+    // }
+    // How do you convert a lowercase character array to uppercase?
+    // string str = "ayush";
+    // for(int i=0;i<str.size()-1;i++)
+    // {
+    //     if(str[i]>='a' && str[i]<='z'){
+    //         str[i]=toupper(str[i]);
+    //     }
+
+    // }
+    // what is a char in C++?
+    // char ch = 'A';
+    // How do you declare a char variable?
+    // char letter = 'a';
+    // char arr[]='B';
+    // How do you declare a character array?
+    // char arr[100]
+    // How do you initialize a character array?
+    // char arr[10];
+    // char arr[]="Hello";
+    // What is the size of char arr[] = "Hello";?
+    // 6 ->because 5 charecter amd 1 null terminal
+    // What is the null terminator (\0) in a string?
+    // char arr[]={'h','e','l','l','o','/0'};
+    // cout<< arr;
+    // How do you print a character array?
+    // cout<<arr;
+    // How do you take input for a character array?
+    // char arr[20];
+    // cin >> arr;
+    // What happens if you enter a space in cin >> str;?
+
+    // cin >> str; -> it stops reading at the first space
+
+    // What is a std::string in C++?
+    // a flexible string type in c++.
+    // How do you declare a std::string?
+    // string str;
+    // How do you initialize a std::string?
+    // string str = "hello";
+    // How do you print a std::string?
+    // cout<<str
+    // How do you take input for a std::string?
+    // getline(cin , str);
+    // How do you find the length of a string?
+    // cout<<str.length()
+    // How do you check if a string is empty?
+
+    // if(str.empty()){
+    //     cout<<"String is empty!"<<endl;
+    // }
+    // What is the first index of a string?
+    // 0
+    // What is the last index of a string?
+    // int lastIndex = str.length()-1;
+    // String Manipulation (char array)
+    // strcpy(dest,src);
+
+    // How do you concatenate two char arrays?
+    // strcat(str1,str2);
+    // How do you compare two char arrays?
+    // if(strcmp(str1,str2)==0){
+    //     cout<<"Equal";
+    // }
+    // cout<<strlen(arr)
+    // How do you manually find the length of a char array?
+    // int len =0;
+    // while(arr[len]!='\0'){
+    //     // len++;
+    // }
+    // How do you find a character inside a char array?
+
+    // cout<<strchr(arr,'a');
+
+    // How do you reverse a char array?
+    // int i=0,j= strlen(arr)-1;
+    // while(i<j){
+    //     swap(arr[i++],arr[j--]);
+    // // }
+
+    // How do you check if a char array is a palindrome?
+
+    // bool isPalindrome = true;
+    // for(int i=0;i<arr.size()-1;i++){
+    //     if(arr[i]!=arr[j]){
+    //         isPalindrome=false;
+    //         break;
+    //     }
+    // }
+
+    // How do you convert uppercase to lowercase?
+    // for(int i=0;arr[i]!='\0';i++){
+    //     arr[i]=toupper(arr[i]);
+    // }
+    // How do you convert lowercase to uppercase?
+
+    // for(int i=0;arr[i]!='\0';i++){
+    //     arr[i]=toupper(arr[i]);
+    // }
+
+    // String Manipulation (std::string)
+    // How do you add one string to another?
+    // string result = str1+ str2;
+    // How do you access a character using an index?
+    // cout<<str[2];
+
+    // How do you change a character in a string?
+    // str[0]='A';
+    // How do you find the first occurrence of a character?
+    // cout<<str.find('e');
+    // How do you extract a substring?
+
+    // cout<<str.substr(1,3);
+
+    // How do you erase part of a string?
+
+    // str.erase(1,2);
+    // How do you replace a character in a string?
+    // // str[0]='X';
+    // if(str.find("test")!=string::npos){
+    //     cout<<"Found";
+    // }
+    // How do you convert std::string to char array?
+
+    // char arr[20];
+    // strcpy(arr,str.c_str());
+
+    // How do you convert a char array to std::string?
+    // string str(arr);
+    // Working with Loops (Strings & Char Arrays)
+
+    // for(int i=0;arr[i]!='\0';i++){
+    //     cout<<arr[i]<<" ";
+    // }
+    // // How do you print each character of a std::string using a loop?
+    // for(char ch: str){
+    //     cout<<ch<<" ";
+    // }
+
+    // How do you count vowels in a string?
+    // int count =0;
+    // for(char ch: str){
+    //     if(ch =='a'||ch =='e'||ch =='i'||ch =='o' || ch =='u'){
+    //         count++;
+    //     }
+    // }
+    // cout<<count<<endl;
+    // How do you count consonants in a string?
+
+    // for(char ch: str){
+    //     if(ch !='a'||ch !='e'||ch !='i'||ch !='o' || ch !='u'){
+    //         count++;
+    //     }
+    // }
+    // cout<<count<<endl;
+
+    // How do you count words in a string?
+
+    // int count =0;
+    // for(char ch: str){
+    //     if(ch == ' '){
+    //         count++;
+    //             }
+    // }
+    // cout<<count <<endl;
+    // 1. How do you check if a string starts with a specific character?
+
+    // string str = "Hello";
+    // if(str[0]=='H'){
+    //     cout<<"string starts with H";
+    // }
+    // else{
+    //     cout<<"string does not start with H";
+    // }
+    // 2. How do you check if a string ends with a specific character?
+    // string str = "Hello";
+
+    // if(str[str.length()-1]=='o'){
+    //     cout<<"String end with o";
+    // }
+    // else{
+    //     cout<<"String doest not end with o";
+    // }
+    // 3. How do you convert a number to a string?
+    // int num = 123;
+    // string str = to_string(num);
+    // cout<<"Number as string :"<<str<<endl;
+    // 4. How do you convert a string to an integer?
+    // string str = "456";
+    // int num = stoi(str);
+    // cout<<"String as integer"<<num;
+    // 5. How do you check if a string contains only alphabets?
+}
