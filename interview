@@ -1,0 +1,178 @@
+#include <iostream>
+#include <stack>
+#include <string>
+using namespace std;
+string reverseString(string s)
+{
+    reverse(s.begin(), s.end());
+    return s;
+}
+bool isPalendrome(string s)
+{
+    int i = 0, j = s.size() - 1;
+    while (i < j)
+    {
+        if (s[i] != s[j])
+        {
+            return false;
+        }
+        i++;
+        j--;
+    }
+    return true;
+}
+int countVowels(string s)
+{
+    int count = 0;
+    for (char ch : s)
+    {
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+        {
+            count++;
+        }
+    }
+    return count;
+}
+string toUpperCase(string s)
+{
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (s[i] >= 'a' || s[i] <= 'z')
+        {
+            s[i] = s[i] - 'a' + 'A'; // convert lowercase to uppercase
+        }
+    }
+    return s;
+}
+bool areAnagram(string s1, string s2)
+{
+    if (s1.length() != s2.length())
+    {
+        return false;
+    }
+    sort(s1.begin(), s1.end());
+    sort(s2.begin(), s2.end());
+    return s1 == s2;
+}
+string removeDuplicates(string s)
+{
+    stack<char> st;
+    for (char ch : s)
+    {
+        if (st.empty() || st.top() == ch)
+        {
+            st.push(ch);
+        }
+        else
+        {
+            st.pop();
+        }
+    }
+    string ans = "";
+    while (!st.empty())
+    {
+        ans += st.top();
+        st.pop();
+    }
+    reverse(ans.begin(), ans.end());
+    return ans;
+}
+bool isRotation(string s1, string s2)
+{
+    return (s1.length() == s2.length() && ((s1 + s2).find(s2) != string::npos));
+}
+string intToRoman(int num)
+{
+    string roman[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+    int values[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+
+    string result = "";
+    for (int i = 0; i < 13; i++)
+    {
+        while (num >= values[i])
+        {
+            num -= values[i];
+            result += roman[i];
+        }
+    }
+    return result;
+}
+int firstUniqueChar(string str)
+{
+    vector<int> freq(26, 0);
+
+    // count occurance of each character
+    for (char ch : str)
+    {
+        freq[ch - 'a']++;
+    }
+    // find first charecter with count 1;
+    for (int i = 0; i < str.length(); i++)
+    {
+        if (freq[str[i] - 'a'] == 1)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int findUniqueIndexOfChar(string str)
+{
+    vector<int> freq(26, 0);
+    // we have created a mappig into the string.
+    for (char ch : str)
+    {
+        freq[ch - 'a']++;
+    }
+    //
+    for (int i = 0; i < str.length(); i++)
+    {
+        if (freq[str[i] - 'a'] == 1)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int main()
+{
+    // string str="hello";
+    // cout<<reverseString(str)<<endl;
+
+    // // 2. Check if a String is Palin
+    // string s= "racecar";
+    // cout<<isPalendrome(s)?"true":"false";
+
+    // 3. Count the Number of Vowels in a String
+    // string s= "hello";
+    // cout<<countVowels(s)<<endl;
+
+    // 6. Convert a String to Uppercase
+    // string str= "hello";
+    // cout<<toUpperCase(str);
+
+    // Check if Two Strings are Anagrams
+    // string s1="listen",s2="silent";
+    // cout<<(areAnagram(s1,s2));
+    // meduim
+    // 2. Remove All Adjacent Duplicates in a String
+    // string s= "abbaca";
+    // cout<<removeDuplicates(s);
+
+    // 3. Check if One String is a Rotation of Another
+    //  string s1= "abcde",s2="cdeab";
+    //  cout<<isRotation(s1,s2);
+
+    // 1. Check if Two Strings are Isomorphic
+    // string str= "abcde";
+    // string str2="fghij";
+    // isIsomorphic(s1,s2);
+
+    // . Integer to Roman Numerals
+    //    cout<< intToRoman(13)<<endl;
+    string str = "leetcode";
+    findUniqueIndexOfChar(str);
+}
